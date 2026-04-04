@@ -1,0 +1,92 @@
+package pl.pp;
+
+import java.util.Scanner;
+
+public class mySecondApp {
+    public static void main(String[] args) {
+
+        // this is a line comment
+        Scanner scanner = new Scanner(System.in);
+
+        /*
+        This is a block comment
+        it can have multiple lines
+        */
+
+        System.out.println("Please enter your name:");
+        String forename = scanner.nextLine();
+
+        System.out.println("Please enter your surname:");
+        String surname = scanner.nextLine();
+
+        scanner.close();
+
+        System.out.println("Welcome " + forename + " " + surname);
+
+}
+double x = 10;
+double y = 2;
+
+Scanner scanner = new Scanner(System.in);
+
+var result = x + y;
+System.out.println("x + y = " + result);
+
+result = x - y;
+System.out.println("x - y = " + result);
+
+result = x * y;
+System.out.println("x * y = " + result);
+
+result = x / y;
+System.out.println("x / y = " + result);
+
+result = x % y;
+System.out.println("x % y = " + result);
+
+System.out.println("Enter two numbers:");
+double first = scanner.nextDouble();
+double second = scanner.nextDouble();
+
+System.out.println("x + y = " + (first + second));
+double x = 10;
+double y = 2;
+
+Scanner scanner = new Scanner(System.in);
+
+var result = x + y;
+System.out.println("x + y = " + result);
+
+result = x - y;
+System.out.println("x - y = " + result);
+
+result = x * y;
+System.out.println("x * y = " + result);
+
+result = x / y;
+System.out.println("x / y = " + result);
+
+result = x % y;
+System.out.println("x % y = " + result);
+
+System.out.println("Enter two numbers:");
+double first = scanner.nextDouble();
+double second = scanner.nextDouble();
+
+System.out.println("x + y = " + (first + second));
+int x = 10;
+
+int doubleX = 2 * x;
+int squareX = x * x;
+
+System.out.println("x = " + x);
+System.out.println("2x = " + doubleX);
+System.out.println("x^2 = " + squareX);
+Scanner scanner = new Scanner(System.in);
+
+System.out.println("Enter your age:");
+int age = scanner.nextInt();
+
+int seconds = age * 365 * 24 * 60 * 60;
+
+System.out.println("My age in seconds: " + seconds);
