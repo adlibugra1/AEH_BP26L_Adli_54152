@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class myThirdApp {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // WHILE - 100'den büyük sayı girene kadar sor
+        int num = 0;
+        while (num <= 100) {
+            System.out.print("Enter a number greater than 100: ");
+            num = scanner.nextInt();
+        }
+        System.out.println("Correct! Number is greater than 100.");
+
+        // DO-WHILE - 200'den büyük sayı girene kadar sor
+        int num2;
+        do {
+            System.out.print("Enter a number greater than 200: ");
+            num2 = scanner.nextInt();
+        } while (num2 <= 200);
+        System.out.println("Correct! Number is greater than 200.");
+
+        // FOR - 1'den 10'a kadar toplam
+        int sum = 0;
+        for (int i = 1; i <= 10; i++) {
+            sum += i;
+        }
+        System.out.println("Sum from 1 to 10 is: " + sum);
+
+        // IF-ELSE - x ve y karşılaştırma
+        int x = 10;
+        int y = 20;
+
+        if (x > y) {
+            System.out.println("x is greater than y");
+        } else if (x < y) {
+            System.out.println("x is less than y");
+        } else {
+            System.out.println("x is equal to y");
+        }
+
+        // WHILE(TRUE) - -1 girene kadar çalışır
+        int input;
+        while (true) {
+            System.out.print("Enter a number (-1 to exit): ");
+            input = scanner.nextInt();
+
+            if (input == -1) {
+                System.out.println("Program ended.");
+                break;
+            }
+        }
+
+        scanner.close();
+    }
+}
