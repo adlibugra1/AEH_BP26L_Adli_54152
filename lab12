@@ -1,0 +1,62 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class myTvfApp {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            try {
+                // Kullanıcıdan giriş dosyası yolu al
+                System.out.print("Input file path: ");
+                String inputPath = scanner.nextLine();
+
+                // Kullanıcıdan çıkış dosyası yolu al
+                System.out.print("Output file path: ");
+                String outputPath = scanner.nextLine();
+
+                File inputFile = new File(inputPath);
+
+                // Dosya var mı kontrol et
+                if (!inputFile.exists()) {
+                    System.out.println("File does not exist. Try again.");
+                    continue;
+                }
+
+                BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+
+                int lineCount = 0;
+
+                // Satırları say
+                while (reader.readLine() != null) {
+                    lineCount++;
+                }
+
+                reader.close();
+
+                // Konsola yazdır
+                System.out.println("Number of lines: " + lineCount);
+
+                // Çıkış dosyasına yaz
+                BufferedWriter writer = new BufferedWriter(new FileWriter(outputPath));
+
+                writer.write("File name: " + inputFile.getName());
+                writer.newLine();
+                writer.write("Number of lines: " + lineCount);
+
+                writer.close();
+
+                System.out.println("Result saved to output file.");
+
+                break;
+
+            } catch (IOException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+
+        scanner.close();
+    }
+}
