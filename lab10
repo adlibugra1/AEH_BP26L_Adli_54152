@@ -1,0 +1,46 @@
+import java.util.Arrays;
+
+public class myTenthApp {
+
+    // Method that counts negative numbers
+    // and sums positive numbers
+    public static int[] countAndSumElements(int[] input) {
+
+        // If array is null or empty
+        if (input == null || input.length == 0) {
+            return new int[]{};
+        }
+
+        int negativeCount = 0;
+        int positiveSum = 0;
+
+        // Loop through array
+        for (int number : input) {
+
+            if (number < 0) {
+                negativeCount++;
+            }
+
+            if (number > 0) {
+                positiveSum += number;
+            }
+        }
+
+        // Return result array
+        return new int[]{negativeCount, positiveSum};
+    }
+
+    // Main method
+    public static void main(String[] args) {
+
+        // Example input
+        int[] numbers = {1, 2, 3, 4, 5, -3, -2, -1};
+
+        // Call method
+        int[] result = countAndSumElements(numbers);
+
+        // Print result
+        System.out.println("Input Array: " + Arrays.toString(numbers));
+        System.out.println("Result: " + Arrays.toString(result));
+    }
+}
