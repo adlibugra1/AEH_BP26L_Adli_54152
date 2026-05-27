@@ -1,0 +1,109 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
+public class myEleventhApp {
+
+    // Student class
+    static class Student {
+
+        // Fields
+        private String indexNumber;
+        private String firstName;
+        private String lastName;
+        private List<Integer> grades;
+
+        // Constructor
+        public Student(String indexNumber, String firstName,
+                       String lastName, List<Integer> grades) {
+            this.indexNumber = indexNumber;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.grades = grades;
+        }
+
+        // Getters
+        public String getIndexNumber() {
+            return indexNumber;
+        }
+
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public List<Integer> getGrades() {
+            return grades;
+        }
+
+        // Method to calculate average grade
+        public double calculateAverage() {
+
+            int sum = 0;
+
+            for (int grade : grades) {
+                sum += grade;
+            }
+
+            return (double) sum / grades.size();
+        }
+
+        // Display student info
+        @Override
+        public String toString() {
+            return firstName + " " + lastName +
+                    " (" + indexNumber + ")" +
+                    " - Average: " + calculateAverage();
+        }
+    }
+
+    // Main method
+    public static void main(String[] args) {
+
+        // Create list of students
+        List<Student> students = new ArrayList<>(Arrays.asList(
+
+                new Student("12345", "Jan", "Kowalski",
+                        Arrays.asList(4, 5, 3, 5)),
+
+                new Student("67890", "Anna", "Nowak",
+                        Arrays.asList(5, 5, 4, 4)),
+
+                new Student("54321", "Pawel", "Wisniewski",
+                        Arrays.asList(2, 3, 2, 4)),
+
+                new Student("09876", "Katarzyna", "Kowalczyk",
+                        Arrays.asList(5, 4, 4, 5))
+        ));
+
+        // Find student with highest average
+        Student bestStudent = students.get(0);
+
+        for (Student student : students) {
+
+            if (student.calculateAverage() >
+                    bestStudent.calculateAverage()) {
+
+                bestStudent = student;
+            }
+        }
+
+        // Display best student
+        System.out.println("Student with the highest average:");
+        System.out.println(bestStudent);
+
+        // Sort students by last name
+        students.sort(Comparator.comparing(Student::getLastName));
+
+        // Display sorted students
+        System.out.println("\nStudents sorted by last names:");
+
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+}
