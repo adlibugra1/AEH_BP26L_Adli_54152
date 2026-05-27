@@ -1,0 +1,56 @@
+class Main {
+
+    void main() {
+
+        Person person1 = new Person(
+                "Bugra",
+                20,
+                "Warsaw, Poland",
+                2005
+        );
+
+        person1.showPersonInfo();
+
+        System.out.println("\n--- growOld() method ---");
+
+        person1.growOld(10);
+
+        person1.showPersonInfo();
+
+        System.out.println("\n--- beYounger() method ---");
+
+        person1.beYounger();
+
+        person1.showPersonInfo();
+    }
+}
+
+class Person {
+
+    String name;
+    int age;
+    String address;
+    int year_of_birth;
+
+    Person(String name, int age, String address, int year_of_birth) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.year_of_birth = year_of_birth;
+    }
+
+    void growOld(int value) {
+        age = age + value;
+    }
+
+    void beYounger() {
+        age = age - 1;
+    }
+
+    void showPersonInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Address: " + address);
+        System.out.println("Year of Birth: " + year_of_birth);
+    }
+}
